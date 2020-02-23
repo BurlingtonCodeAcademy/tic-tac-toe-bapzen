@@ -16,8 +16,8 @@ badTurn.setAttribute("hidden", "");
 
 
 function updateStatus() {
-    turnX.removeAttribute("hidden", "");
-    startBtn.setAttribute("disabled", "");
+    turnX.removeAttribute("hidden");
+    startBtn.removeAttribute("disabled");
 
 }
 
@@ -28,20 +28,39 @@ function updateStatus() {
 
 function gamePlay() {
 
-            document.getElementById("cell-0").addEventListener('click', (event) => { event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
-            document.getElementById("cell-1").addEventListener('click', (event) => { event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
-            document.getElementById("cell-2").addEventListener('click', (event) => { event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
-            document.getElementById("cell-3").addEventListener('click', (event) => { event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
-            document.getElementById("cell-4").addEventListener('click', (event) => { event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
-            document.getElementById("cell-5").addEventListener('click', (event) => { event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
-            document.getElementById("cell-6").addEventListener('click', (event) => { event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
-            document.getElementById("cell-7").addEventListener('click', (event) => { event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
-            document.getElementById("cell-8").addEventListener('click', (event) => { event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
+             // //Begin click Event Listeners for taken cell:
+            document.getElementById("cell-0").addEventListener('click', (event) => { if (event.target.className === "taken") { badTurn.removeAttribute("hidden"); } });
+            document.getElementById("cell-1").addEventListener('click', (event) => { if (event.target.className === "taken") { badTurn.removeAttribute("hidden"); } });
+            document.getElementById("cell-2").addEventListener('click', (event) => { if (event.target.className === "taken") { badTurn.removeAttribute("hidden"); } });
+            document.getElementById("cell-3").addEventListener('click', (event) => { if (event.target.className === "taken") { badTurn.removeAttribute("hidden"); } });
+            document.getElementById("cell-4").addEventListener('click', (event) => { if (event.target.className === "taken") { badTurn.removeAttribute("hidden"); } });
+            document.getElementById("cell-5").addEventListener('click', (event) => { if (event.target.className === "taken") { badTurn.removeAttribute("hidden"); } });
+            document.getElementById("cell-6").addEventListener('click', (event) => { if (event.target.className === "taken") { badTurn.removeAttribute("hidden"); } });
+            document.getElementById("cell-7").addEventListener('click', (event) => { if (event.target.className === "taken") { badTurn.removeAttribute("hidden"); } });
+            document.getElementById("cell-8").addEventListener('click', (event) => { if (event.target.className === "taken") { badTurn.removeAttribute("hidden"); } });
+
+            // Place click Event Listeners for playing turns:
+            document.getElementById("cell-0").addEventListener('click', (event) => { badTurn.setAttribute("hidden", ""); event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
+            document.getElementById("cell-1").addEventListener('click', (event) => { badTurn.setAttribute("hidden", ""); event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
+            document.getElementById("cell-2").addEventListener('click', (event) => { badTurn.setAttribute("hidden", ""); event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
+            document.getElementById("cell-3").addEventListener('click', (event) => { badTurn.setAttribute("hidden", ""); event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
+            document.getElementById("cell-4").addEventListener('click', (event) => { badTurn.setAttribute("hidden", ""); event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
+            document.getElementById("cell-5").addEventListener('click', (event) => { badTurn.setAttribute("hidden", ""); event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
+            document.getElementById("cell-6").addEventListener('click', (event) => { badTurn.setAttribute("hidden", ""); event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
+            document.getElementById("cell-7").addEventListener('click', (event) => { badTurn.setAttribute("hidden", ""); event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
+            document.getElementById("cell-8").addEventListener('click', (event) => { badTurn.setAttribute("hidden", ""); event.target.textContent = whoNow; event.target.className = "taken"; changeTurn(); }, {once: true});
            
-            
-        
+           
+       
     }
 
+// Check if cell is already taken:
+
+// function occupied () {
+//     if (this.className === "taken") {
+//         badTurn.removeAttribute("hidden");
+//     };
+// }
 
 function changeTurn() {
 
